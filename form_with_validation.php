@@ -38,19 +38,19 @@
 		$username = trim($_POST['username']);
 		$password = trim($_POST['password']);
 		// 验证
-		$fields_required = array("username", "password");
+		$fields_required = array("登录名", "密码");
 		foreach ($fields_required as $fields) {
 			$value = trim($_POST[$field]);
 			if (!has_presence($username)) {
-			$errors['$field'] = ucfirst($field). " 不能为空" ;
+			$errors['$field'] = $field . "不能为空" ;
 			}
 		}
 		
-		$fields_with_max_lengths = array("username" => 30, "password" => 8);
+		$fields_with_max_lengths = array("登录名" => 30, "密码" => 8);
 		foreach ($fields_with_max_lengths as $field => $max) {
 			$value = trim($_POST['field']);
 			if (!has_max_length($value, $max)) {
-				$errors['$field'] = ucfirst($field). " 过长" ;
+				$errors['$field'] = $field . "过长" ;
 			}
 		}
 		if (empty($errors)) {
