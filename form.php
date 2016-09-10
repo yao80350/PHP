@@ -26,7 +26,7 @@
 </head>
 <body>
 	<?php echo $message; ?> <br>
-	<form action="form_processing.php"> method="post">
+	<form action="form.php"> method="post">
 		登录名: <input type="text" name="username" value="<?php echo htmlspecialchars($username) ?>"><br>
 		密码: <input type="password" name="password" value=""><br>
 		<br>
